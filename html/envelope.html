@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/envelope.css">
+  <title>脱出ゲーム</title>
+</head>
+<div class="container">
+  <!-- 上の行 -->
+  <div class="spacer"></div>
+  <div class="image">
+      <img src="/assets/img/envelope.png" alt="封筒"><!-- 背景画像 -->
+  
+    <button id="leftbutton" class="left-button">
+        <img src="/assets/img/left.png" alt="ボタン画像"><!-- 左遷移ボタン -->
+    </button>
+
+    <button id="envebutton" class="enve-button">
+      <img src="/assets/img/画像5.png" alt="封筒イベボタン画像"><!-- 封筒ボタン（イベント用） -->
+    </button>
+
+    <audio id="bgm" loop>
+      <source src="/assets/sound/timesound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+
+    </div>
+  
+  <div class="spacer"></div>
+  <div class="item-area">
+    <div class="item-slot" id="slot1">
+        <img src="/assets/img/hasami.png" alt="アイテム1" style="display: none;"><!-- アイテム1用 -->
+    </div> 
+    <div class="item-slot" id="slot2">
+        <img src="/assets/img/memoarea.png" alt="アイテム2"style="display: none;"><!-- アイテム2用 -->
+    </div> 
+    <div class="item-slot" id="slot3">
+      <img src="/assets/img/kaityudentoui.png" alt="アイテム3"style="display: none;"><!-- アイテム3用 -->
+    </div>
+    <div class="item-slot" id="slot4">
+      <img src="/assets/img/key.png" alt="アイテム4"style="display: none;"><!-- アイテム4用 -->
+    </div>  
+    <div class="item-slot" id="slot5">
+      <img src="/assets/img/rimokonn.png" alt="アイテム5"style="display: none;"><!-- アイテム5用 -->
+    </div>  
+    <div class="item-slot" id="slot6">
+      <img src="/assets/img/ipohne.png" alt="アイテム6"style="display: none;"><!-- アイテム6用 -->
+    </div>  
+    <div class="item-slot" id="slot7">
+      <img src="/assets/img/cutter.png" alt="アイテム7"style="display: none;"><!-- アイテム7用 -->
+    </div>  
+    <div class="item-slot" id="slot8">
+      <img src="/assets/img/suuzi.png" alt="アイテム8"style="display: none;"><!-- アイテム8用 -->
+    </div>  
+    <div class="item-slot" id="slot9">
+      <img src="/assets/img/denthi.png" alt="アイテム9"style="display: none;"><!-- アイテム9用 -->
+    </div>  
+    <div class="item-slot" id="slot10">
+      <img src="/assets/img/pass.png" alt="アイテム10"style="display: none;"><!-- アイテム10用 -->
+    </div>  
+  </div>
+<div class="spacer"></div>
+
+  <!-- 下の行 -->
+  <div class="spacer"></div>
+  <div class="text-area" id="textArea"></div>
+  <div class="spacer"></div>
+</div>
+<script src="/js/envelope.js"></script>
+</body>
+</html>

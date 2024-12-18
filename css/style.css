@@ -1,0 +1,182 @@
+/* 全体の設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: black; /* 背景色を黒に変更 */
+    color: white;
+    height: 100vh; /* 画面の高さを100%に設定 */
+    overflow: hidden; /* スクロールを無効化 */
+}
+
+/* グリッド全体の設定 */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5.9fr 0.1fr 2fr 1fr; /* 列の比率 1:5:1:2:1 */
+    grid-template-rows: 8fr 2fr; /* 行の比率 8:2 */
+    gap: 10px; /* 要素間の余白 */
+    height: 100vh; /* 画面全体の高さ */
+}
+  
+/* 画像エリア */
+.image {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 背景画像のサイズ設定 */
+.image img {
+    width: 100%; /* 幅を親要素に合わせて最大化 */
+    height: auto; /* 高さは幅に合わせて自動調整 */
+    max-width: 100%; /* 最大幅は親要素の100% */
+    max-height: 100%; /* 最大高さは親要素の100% */
+    object-fit: contain; /* アスペクト比を保ちながら収める */
+    border: 2px solid white;
+}
+
+/* ボタン化した画像 */
+.image-button {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    top: 60%;           /* 親要素の中央に配置 */
+    left: 45%;          /* 親要素の中央に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+/* ボタン画像のサイズ設定 */
+.image-button img {
+    border: none; 
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    max-width: 50px; /* ボタン画像の最大幅 */
+    max-height: 50px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+/* 封筒ボタン設定 */
+#envelopeButton {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    right: 46%;
+    top: 11%;
+    transform: translate(-50%, -50%); /* 完全に中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+/* 封筒ボタン画像のサイズ設定 */
+#envelopeButton img {
+    border: none; 
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    max-width: 20px; /* ボタン画像の最大幅 */
+    max-height: 20px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+/* 壁ボタン設定 */
+#wallbutton {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    left: calc(38% - 54px); /* ボタンを少し左に移動 (-10px分左) */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+/* 壁ボタン画像のサイズ設定 */
+#wallbutton img {
+    border: none;
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    max-width: 20px; /* ボタン画像の最大幅 */
+    max-height: 20px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+/* 後ろ遷移ボタン化した画像 */
+.back-button {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    padding: 0;        /* 余白を削除 */
+    cursor: pointer;   /* カーソルをクリック可能に設定 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    left: 40%;          /* 左から50%の位置に配置 */
+    top: 65%;       /* 下から10pxの位置に配置（画像エリアの下） */
+    transform: translateX(-50%); /* 左右の中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+
+/* 後ろ遷移ボタン画像のサイズ設定 */
+.back-button img {
+    max-width: 150px; /* ボタン画像の最大幅 */
+    max-height: 150px; /* ボタン画像の最大高さ */
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+
+/* アイテムエリア */
+.item-area {
+    background-color: rgb(70, 65, 65);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列に配置 */
+    grid-template-rows: repeat(5, 1fr); /* 5行に分けて配置 */
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid white;
+    margin-top: 30px; /* 上に10pxの余白を追加 */
+}
+
+/* アイテム枠内の設定 */
+.item-slot {
+    display: flex; /* ゲーム開始時に非表示にする */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 65, 65);
+    border: 1px solid white;
+    padding: 10px;
+}
+
+/* 画像設定 */
+.item-slot img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* テキストエリア */
+.text-area {
+    background-color: rgb(70, 65, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+/* リセットボタン */
+#resetButton {
+    border: none;       /* 枠線を消す */
+    padding: 10px 20px; /* ボタンの余白を調整 */
+    background-color: black;
+}
+
+/* 余白用の要素 */
+.spacer {
+    background-color: black; /* 余白の色を黒に変更 */
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bedroom.css">
+  <title>脱出ゲーム</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 上の行 -->
+    <div class="spacer"></div>
+    <div class="image">
+        <img src="/assets/img/bedroom.png" alt="部屋の画像">
+
+        <audio id="bgm" loop>
+          <source src="/assets/sound/timesound.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+
+        <button id="leftbutton" class="left-button">
+            <img src="/assets/img/left.png" alt="ボタン画像"><!-- 左遷移ボタン -->
+        </button>
+
+        <button id="item6Button" class="item6-Button">
+            <img src="/assets/img/iPhone.png" alt="バックボタン画像">
+        </button>
+
+        <button id="nazobutton" class="nazo-button">
+            <img src="/assets/img/bag.png" alt="バックボタン画像">
+        </button>
+        
+        <div id="image-overlay" style="display: none;">
+            <img id="overlay-image" alt="謎画像">
+        </div>
+
+        <div class="image" id="scary-image-overlay" style="display: none;">
+          <img src="/assets/img/kowai.jpg" alt="Scary Image" id="scary-image">
+        </div>
+      
+
+      <!-- 電話の選択肢を表示するオーバーレイ -->
+    <div id="phone-overlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <p>出ますか？</p>
+            <button id="answer-phone">出る</button>
+            <button id="ignore-phone">無視</button>
+        </div>
+    </div>
+    
+
+    
+    </div>
+
+    <div class="spacer"></div>
+    <div class="item-area">
+        <div class="item-slot" id="slot1">
+            <img src="/assets/img/hasami.png" alt="アイテム1" style="display: none;"><!-- アイテム1用 -->
+        </div> 
+        <div class="item-slot" id="slot2">
+            <img src="/assets/img/memoarea.png" alt="アイテム2"style="display: none;"><!-- アイテム2用 -->
+        </div> 
+        <div class="item-slot" id="slot3">
+          <img src="/assets/img/kaityudentoui.png" alt="アイテム3"style="display: none;"><!-- アイテム3用 -->
+        </div>
+        <div class="item-slot" id="slot4">
+          <img src="/assets/img/key.png" alt="アイテム4"style="display: none;"><!-- アイテム4用 -->
+        </div>  
+        <div class="item-slot" id="slot5">
+          <img src="/assets/img/rimokonn.png" alt="アイテム5"style="display: none;"><!-- アイテム5用 -->
+        </div>  
+        <div class="item-slot" id="slot6">
+          <img src="/assets/img/ipohne.png" alt="アイテム6"style="display: none;"><!-- アイテム6用 -->
+        </div>  
+        <div class="item-slot" id="slot7">
+          <img src="/assets/img/cutter.png" alt="アイテム7"style="display: none;"><!-- アイテム7用 -->
+        </div>  
+        <div class="item-slot" id="slot8">
+          <img src="/assets/img/nazo.png" alt="アイテム8"style="display: none;"><!-- アイテム8用 -->
+        </div>  
+        <div class="item-slot" id="slot9">
+          <img src="/assets/img/denthi.png" alt="アイテム9"style="display: none;"><!-- アイテム9用 -->
+        </div>  
+        <div class="item-slot" id="slot10">
+          <img src="/assets/img/key.png" alt="アイテム10"style="display: none;"><!-- アイテム10用 -->
+        </div>  
+      </div>
+    <div class="spacer"></div>
+
+    <!-- 下の行 -->
+    <div class="spacer"></div>
+    <div class="text-area" id="textArea"></div>
+    <div class="spacer"></div>
+  </div>
+  <script src="/js/bedroom.js"></script>
+</body>
+</html>

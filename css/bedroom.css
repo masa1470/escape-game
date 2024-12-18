@@ -1,0 +1,239 @@
+/* 全体の設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: black; /* 背景色を黒に変更 */
+    color: white;
+    height: 100vh; /* 画面の高さを100%に設定 */
+    overflow: hidden; /* スクロールを無効化 */
+}
+
+/* グリッド全体の設定 */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5.9fr 0.1fr 2fr 1fr; /* 列の比率 1:5:1:2:1 */
+    grid-template-rows: 8fr 2fr; /* 行の比率 8:2 */
+    gap: 10px; /* 要素間の余白 */
+    height: 100vh; /* 画面全体の高さ */
+}
+  
+/* 画像エリア */
+.image {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 背景画像のサイズ設定 */
+.image img {
+    width: 100%; /* 幅を親要素に合わせて最大化 */
+    height: auto; /* 高さは幅に合わせて自動調整 */
+    max-width: 100%; /* 最大幅は親要素の100% */
+    max-height: 100%; /* 最大高さは親要素の100% */
+    object-fit: contain; /* アスペクト比を保ちながら収める */
+    border: 2px solid white;
+}
+
+/* iPhoneボタン化した画像 */
+.item6-Button {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    cursor: pointer;   /* カーソルをクリック可能に設定 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    left: 20%;
+    bottom: 30%;
+    transform: translateX(-50%); /* 左右の中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+
+/* iPhoneボタン画像のサイズ設定 */
+.item6-Button img {
+    border: none;      /* ボーダーを削除 */
+    max-width: 50px; /* ボタン画像の最大幅 */
+    max-height: 50px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+/* 電話の選択肢（オーバーレイ）の位置を調整 */
+#phone-overlay {
+    position: absolute;
+
+    left: 40%;
+    transform: translateX(-50%); /* 中央揃え */
+    background-color: rgba(0, 0, 0, 0.7); /* 背景を半透明にして視認性を高める */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* 初期状態では非表示 */
+    z-index: 10; /* 他の要素の上に表示 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+/* 電話に出るボタンと無視するボタンの共通スタイル */
+#answer-phone, #ignore-phone {
+    background-color: transparent; /* 背景色なし */
+    border: 2px solid white; /* 白い枠線 */
+    color: white; /* 文字色を白に */
+    padding: 10px 20px; /* ボタンの内側に余白を追加 */
+    font-size: 18px; /* フォントサイズ */
+    font-family: Arial, sans-serif; /* フォント */
+    cursor: pointer; /* マウスポインタを手のひらアイコンに */
+    border-radius: 5px; /* ボタンの角を丸く */
+    transition: all 0.3s ease; /* ホバー時のアニメーション */
+}
+
+/* ホバー時のスタイル */
+#answer-phone:hover, #ignore-phone:hover {
+    background-color: white; /* ホバー時に背景色を白に */
+    color: black; /* 文字色を黒に */
+}
+
+/* フォーカス時のスタイル（ボタンを選択したとき） */
+#answer-phone:focus, #ignore-phone:focus {
+    outline: none; /* フォーカス時の枠線を消す */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 輪郭に光る効果 */
+}
+
+
+
+/* 謎ボタン化した画像 */
+.nazo-button {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    cursor: pointer;   /* カーソルをクリック可能に設定 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    top: 15%;
+    left: 40%;
+    transform: translateX(-50%); /* 左右の中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+
+/* 謎ボタン画像のサイズ設定 */
+.nazo-button img {
+    border: none;      /* ボーダーを削除 */
+    max-width: 5px; /* ボタン画像の最大幅 */
+    max-height: 5px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+#image-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* 背景を暗くする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 前面に表示 */
+}
+
+#overlay-image {
+    max-width: 30%;
+    max-height: 30%;
+    border: 2px solid white;
+}
+
+
+
+/* 左遷移ボタン化した画像 */
+.left-button {
+    background: none; /* 背景を削除 */
+    border: none;      /* ボーダーを削除 */
+    padding: 0;        /* 余白を削除 */
+    cursor: default;     /* カーソルをデフォルトの矢印に設定 */
+    position: absolute; /* 画像の上にボタンを重ねるために絶対配置 */
+    top: 40%;           /* 親要素の中央に配置 */
+    right: 83%;         /* 親要素の中央に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央に配置 */
+    z-index: 10;        /* ボタン画像を他の要素より前面に表示 */
+}
+
+/* 左遷移ボタン画像のサイズ設定 */
+.left-button img {
+    max-width: 150px; /* ボタン画像の最大幅 */
+    max-height: 150px; /* ボタン画像の最大高さ */
+    object-fit: contain; /* アスペクト比を維持 */
+}
+
+/* 怖い画像オーバーレイ */
+#scary-image-overlay {
+    position: absolute; /* .image内で絶対位置 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* 背景画像より上に表示 */
+    pointer-events: none; /* オーバーレイがクリックを妨げないように */
+}
+
+/* 怖い画像のスタイル */
+#scary-image {
+    max-width: 75%; /* 親要素の幅に収まる */
+    max-height: 75%; /* 親要素の高さに収まる */
+    object-fit: contain; /* アスペクト比を保ちながら収める */
+}
+
+
+
+/* アイテムエリア */
+.item-area {
+    background-color: rgb(70, 65, 65);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列に配置 */
+    grid-template-rows: repeat(5, 1fr); /* 5行に分けて配置 */
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid white;
+    margin-top: 30px; /* 上に10pxの余白を追加 */
+}
+
+/* アイテム枠内の設定 */
+.item-slot {
+    display: flex; /* ゲーム開始時に非表示にする */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 65, 65);
+    border: 1px solid white;
+    padding: 10px;
+}
+
+/* 画像設定 */
+.item-slot img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* テキストエリア */
+.text-area {
+    background-color: rgb(70, 65, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+/* 余白用の要素 */
+.spacer {
+    background-color: black; /* 余白の色を黒に変更 */
+}
