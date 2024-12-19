@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const overlayImage = document.getElementById("overlay-image");
 
     suuziButton.addEventListener("click", function () {
-        overlayImage.src = "/assets/img/suuzi.png"; // 画像のパスを指定
+        overlayImage.src = "/assets/img/alphapng.png"; // 画像のパスを指定
         overlay.style.display = "flex"; // 表示する
     });
 
